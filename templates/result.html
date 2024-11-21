@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identification Result</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<style>
+/* General Styling for Result Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(249, 249, 249, 0.8);
+    color: #333;
+}
+
+/* Section Box Styling */
+.section-box {
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Styling for Result Header */
+h2 {
+    color: #ff5722;
+    margin-bottom: 30px;
+}
+
+/* Result Wrapper Styling */
+.result-wrap {
+    margin-bottom: 30px;
+}
+
+.result-wrap h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.result-wrap img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Back Button Styling */
+.back-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #d32f2f;
+}
+
+</style>
+<body>
+    <section id="result">
+        <div class="section-box">
+            <h2>Identification Result</h2>
+            <div class="result-wrap">
+                <h3>Predicted Species: {{ predicted_species }}</h3>
+                <img src="{{ file_path }}" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+            </div>
+            <a href="{{ url_for('identify') }}"class="back-btn">Upload Another Image</a>
+        </div>
+    </section>
+</body>
+</html>

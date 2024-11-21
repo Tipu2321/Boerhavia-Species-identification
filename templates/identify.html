@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Boerhavia Species</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<!-- Internal CSS for Styling -->
+<style>
+  /* General Styling */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(249, 249, 249, 0.8); /* Transparent background */
+    color: #333;
+  }
+
+  /* Container Styling */
+  .section-box {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7); /* More transparent container */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  .content-wrap {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 12;
+    color: black;
+    line-height: 1.6;
+  }
+
+  /* Options Grid */
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .option-box {
+    padding: 30px;
+    background-color: gray;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .option-box:hover {
+    transform: translateY(-10px);
+  }
+
+  h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  /* Button Styling */
+  .upload-btn, .scan-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .upload-btn:hover, .scan-btn:hover {
+    background-color: #45a049;
+  }
+
+  /* File Input */
+  #image-upload {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 300px;
+  }
+
+  /* Camera Feed */
+  #video-feed {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+
+  #capture-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #capture-btn:hover {
+    background-color: #f44336;
+  }
+
+  /* Image preview */
+  #scanned-image {
+    display: none;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .options-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+    .back-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #d32f2f;
+        }
+</style>
+<body>
+    <section id="identify">
+        <div class="section-box">
+           </center> <h3 >Boerhavia Species Identification</h3>
+            <h2 >Upload or Scan an Image</h2>
+            <p>Select an option below to identify the Boerhavia species:</p></center>
+            <div class="options-grid">
+                <div class="option-box">
+                    <h4>Upload an Image</h4>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="image-upload" name="file" accept="image/*" required>
+                        <button class="upload-btn" type="submit">Upload Image</button>
+                    </form>
+                </div>
+                <div class="option-box">
+                    <h4>Scan Using Camera</h4>
+                    <button class="scan-btn" onclick="window.location.href='scan.html'">Start Camera Scan</button>
+                </div>
+            </div><br><br>
+             <a href="index.html" class="back-btn">Go Back</a>
+        </div>
+    </section>
+</body>
+</html>
